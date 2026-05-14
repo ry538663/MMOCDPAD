@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+
+{% block title %}Advanced Analytics & Reports{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <p class="text-muted">Research-grade security metrics and anomaly analysis.</p>
+    <a href="/api/generate_report" class="btn btn-primary">
+        <i class="fas fa-file-pdf me-2"></i> Download Security Report
+    </a>
+</div>
+
+<div class="row g-4">
+    <div class="col-md-6">
+        <div class="glass-card p-4">
+            <h5><i class="fas fa-chart-area text-info me-2"></i>False Positive Rate Analysis</h5>
+            <p class="text-muted small">Comparison of FPR across different security protocols.</p>
+            <canvas id="fpr-chart" height="250"></canvas>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="glass-card p-4">
+            <h5><i class="fas fa-shield-alt text-success me-2"></i>Data Confidentiality Rate</h5>
+            <p class="text-muted small">Confidentiality levels achieved with MMO-SPN encryption.</p>
+            <canvas id="confidentiality-chart" height="250"></canvas>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="glass-card p-4">
+            <h5><i class="fas fa-check-double text-primary me-2"></i>Data Integrity Rate Analysis</h5>
+            <p class="text-muted small">Integrity verification success rate over time.</p>
+            <canvas id="integrity-chart" height="250"></canvas>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="glass-card p-4">
+            <h5><i class="fas fa-clock text-warning me-2"></i>Network Access Time Analysis</h5>
+            <p class="text-muted small">Latencies (ms) for authentication and access granting.</p>
+            <canvas id="access-time-chart" height="250"></canvas>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/charts.js') }}"></script>
+{% endblock %}

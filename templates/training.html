@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+
+{% block title %}AI Training Center{% endblock %}
+
+{% block content %}
+<div class="row g-4">
+    <div class="col-md-6">
+        <div class="glass-card p-4 h-100">
+            <h5><i class="fas fa-brain text-info me-2"></i>DRL Training Progress</h5>
+            <div class="mt-4">
+                <div class="d-flex justify-content-between mb-2">
+                    <span>DQN Agent Learning</span>
+                    <span class="text-success">98% Complete</span>
+                </div>
+                <div class="progress mb-4" style="height: 10px;">
+                    <div class="progress-bar bg-info progress-bar-striped progress-bar-animated" style="width: 98%"></div>
+                </div>
+                <div class="text-muted small">
+                    <p><i class="fas fa-check-circle text-success me-2"></i>Environment initialized (ZTSNetworkEnv)</p>
+                    <p><i class="fas fa-check-circle text-success me-2"></i>Policy optimization active (MlpPolicy)</p>
+                    <p><i class="fas fa-sync fa-spin me-2"></i>Optimizing reward function...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="glass-card p-4 h-100">
+            <h5><i class="fas fa-robot text-warning me-2"></i>Model Parameters</h5>
+            <div class="table-responsive mt-3">
+                <table class="table table-dark table-sm">
+                    <tbody>
+                        <tr><td>Algorithm</td><td class="text-info">Deep Q-Network (DQN)</td></tr>
+                        <tr><td>Learning Rate</td><td class="text-info">0.001</td></tr>
+                        <tr><td>Buffer Size</td><td class="text-info">10,000</td></tr>
+                        <tr><td>Discount Factor</td><td class="text-info">0.99</td></tr>
+                        <tr><td>Target Update</td><td class="text-info">Hard (every 1000 steps)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

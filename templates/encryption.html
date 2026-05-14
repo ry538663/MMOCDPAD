@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+
+{% block title %}Encryption Visualization{% endblock %}
+
+{% block content %}
+<div class="row g-4">
+    <div class="col-md-12">
+        <div class="glass-card p-5 text-center">
+            <h4 class="mb-5">Matyas-Meyer-Oseas + SPN Flow</h4>
+            
+            <div class="d-flex justify-content-center align-items-center flex-wrap">
+                <div class="glass-card p-3 m-2" style="width: 150px;">
+                    <i class="fas fa-file-code fa-2x mb-2 text-info"></i>
+                    <p class="mb-0">Data Block</p>
+                    <small class="text-muted">m_i</small>
+                </div>
+                
+                <i class="fas fa-arrow-right mx-3 text-muted"></i>
+                
+                <div class="glass-card p-4 m-2 border-info" style="width: 200px; border-width: 2px;">
+                    <i class="fas fa-cogs fa-2x mb-2 text-info"></i>
+                    <p class="mb-0 fw-bold">SPN Block Cipher</p>
+                    <small class="text-muted">E_{H_{i-1}}</small>
+                </div>
+
+                <div class="mx-3 text-muted fw-bold">XOR</div>
+
+                <div class="glass-card p-3 m-2 bg-primary bg-opacity-10" style="width: 150px;">
+                    <i class="fas fa-hashtag fa-2x mb-2 text-primary"></i>
+                    <p class="mb-0">Hash Result</p>
+                    <small class="text-muted">H_i</small>
+                </div>
+            </div>
+
+            <div class="mt-5 text-start">
+                <h5>Workflow Explanation:</h5>
+                <ol class="text-muted">
+                    <li>The device payload is divided into 16-bit data blocks (m_i).</li>
+                    <li>The Substitution-Permutation Network (SPN) encrypts the block using the previous hash (H_{i-1}) as the key.</li>
+                    <li>The resulting ciphertext is XORed with the original message block to produce the next hash (H_i).</li>
+                    <li>This Matyas-Meyer-Oseas construction ensures collision resistance and data integrity in the Zero Trust Network.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

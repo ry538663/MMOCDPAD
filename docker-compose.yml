@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  mmocdpad-app:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+    environment:
+      - FLASK_ENV=development
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    network_mode: "host"

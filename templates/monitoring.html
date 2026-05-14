@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+
+{% block title %}Device Monitoring{% endblock %}
+
+{% block content %}
+<div class="row g-4">
+    <div class="col-md-12">
+        <div class="glass-card p-4">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h5><i class="fas fa-microchip text-info me-2"></i>Active ZTS Devices</h5>
+                <span class="badge bg-info">5 Devices Online</span>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-dark table-hover">
+                    <thead>
+                        <tr>
+                            <th>Device ID</th>
+                            <th>IP Address</th>
+                            <th>MAC Address</th>
+                            <th>Trust Score</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="device-table-body">
+                        <!-- Populated by JS -->
+                        <tr>
+                            <td>IIoT_DEV_100</td>
+                            <td>192.168.1.10</td>
+                            <td>00:1A:2B:3C:4D:50</td>
+                            <td><div class="progress" style="height: 10px; width: 100px;"><div class="progress-bar bg-success" style="width: 95%"></div></div></td>
+                            <td><span class="status-badge status-allowed">Trusted</span></td>
+                        </tr>
+                        <!-- Static for now, can be dynamic later -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
